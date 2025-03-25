@@ -1,13 +1,9 @@
-body {
-  width: 100%;
-  background-image: url("src/assets/bg.png.png");
-  background-size: cover;
-}
-
 #root {
   width: 100%;
-  padding: 50px;
   min-height: 100vh;
   margin: 0 auto;
   text-align: center;
+  width: 100%;
+  background-image: url("./assets/bg.png.png");
+  background-size: cover;
 }

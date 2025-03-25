@@ -1,10 +1,13 @@
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { useBooking } from "../BookingContext";
 import { useState } from "react";
+import '../styles/BookingPage.sass'
+import CinemaHall from "../components/CinemaHall";
 const BookingPage = () => {
     const { movieId, sessionId } = useParams();
     const { movieList, bookSeats, bookings } = useBooking();
     const [selectedSeats, setSelectedSeats] = useState<number[]>([]);
+    const navigate = useNavigate();
 
     const movie = movieList.find((m) => m.id === Number(movieId));
     const session = movie?.sessions.find((s) => s.id === sessionId);
@@ -29,30 +32,23 @@ const BookingPage = () => {
  
     return (
         session && 
-        <div className="seatsContainer">
-            <h1>{movie?.title} - {session.time}</h1>
-            <p>Available seats: {session.availableSeats}</p>
-            <div>
-            {Array.from({ length: session.availableSeats }, (_, i) => i + 1).map((seat) => (
-          <button
-            key={seat}
-            onClick={() => toggleSeat(seat)}
-            style={{
-              backgroundColor: bookedSeats.includes(seat)
-                ? 'red'
-                : selectedSeats.includes(seat)
-                ? 'green'
-                : 'grey',
-            }}
-            disabled={bookedSeats.includes(seat)}
-          >
-            {seat}
-          </button>
-        ))}   
-            </div>
-            <button onClick={handleBooking} disabled={selectedSeats.length === 0}>
-                 Забронювати
+        <div className="bookingPage">
+            <h1 className="bookingPage__title">{movie?.title} - {session.time}</h1>
+            <CinemaHall selectedSeats={selectedSeats} bookedSeats={bookedSeats} toggleSeat={toggleSeat}/>
+            <button onClick={() => setSelectedSeats([])} className="refreshBtn" disabled={selectedSeats.length === 0}>
+                 X
             </button>
+            <span className="br"></span>
+            <div className="infoContainer">
+              <div className="infoContainer__seatInfoWrap">
+                <h2>Seat</h2>
+                <p>{selectedSeats.length > 0 ? selectedSeats.join(', ') : '-'}</p>
+              </div>
+            <div className="infoContainer__btnWrap">
+              <button className="returnBtn" onClick={()=> navigate('/')}>Back</button>
+              <button className="bookBtn" onClick={handleBooking} >Proceed Booking</button>
+            </div>
+          </div>
         </div>
     )
 }

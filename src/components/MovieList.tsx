@@ -16,7 +16,7 @@ const MovieList: React.FC = () => {
   );
 
   return (
-    <>
+    <div className='mainPage'>
       <input className='input' onChange={handleChange} placeholder='Enter movie name to find' value={movieName}></input>
       <h1>Now Showing</h1> 
       <ul className='movieList'>
@@ -27,7 +27,7 @@ const MovieList: React.FC = () => {
         )}
       
     </ul>
-    </>
+    </div>
 
 
   )

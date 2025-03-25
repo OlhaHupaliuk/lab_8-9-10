@@ -29,7 +29,7 @@ const MovieCard: React.FC<MovieCardProps> = ({movie}) => {
 
             {sessions.map(time => {
               return(
-                <button onClick={() => navigate(`/booking/${id}/${time.id}`)}>{time.time}</button>
+                <button className='movieCard__sessionBtn' onClick={() => navigate(`/booking/${id}/${time.id}`)}>{time.time}</button>
               )
             })}
         </div>

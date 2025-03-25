@@ -1,0 +1,87 @@
+@mixin flex-center()
+    display: flex
+    justify-content: center
+
+.bookingPage
+    width: 100%
+    background-color: transparent
+    box-sizing: border-box
+    padding: 66px 94px
+    &__title
+        font-family: Poppins, sans-serif
+        color: white
+        text-align: start
+        font-size: 36px
+        margin-bottom: 72px
+    .refreshBtn
+        width: 31%
+        background-color: #fff
+        border-radius: 16px
+        color: #000
+        font-size: 20px
+        font-weight: bold
+        height: 42px
+        margin-top: 36px
+        margin-bottom: 100px
+    .seatsContainer
+        width: 31%
+        margin: 0 auto
+        @include flex-center()
+        gap: 12px
+        flex-wrap: wrap
+        height: auto
+
+        .seat
+            font-weight: bold
+            font-size: 12px
+            font-family: Roboto
+            @include flex-center()
+            padding: 12px
+            width: 40px
+            border-radius: 6px
+            border: none
+
+    .br:after
+        display: block
+        content: ' '
+        height: 1px
+        width: 100%
+        background-color: #fff
+    .infoContainer
+        padding-top: 34px
+        @include flex-center()
+        gap: 100px
+        align-items: center
+        text-transform: uppercase
+        &__seatInfoWrap
+            max-width: 190px
+            width: 190px
+            text-align: start
+            h2
+                font-size: 18px
+                font-weight: normal
+
+                margin: 0
+            p
+                line-height: 1em
+                font-size: 36px
+                font-weight: bold
+                margin: 0
+        &__btnWrap
+            display: flex
+            gap: 30px
+            button
+                border-radius: 8px
+                color: white
+                font-size: 24px
+                height: 60px
+                border: none
+                padding: 10px 40px
+                min-width: 220px
+                cursor: pointer
+            .returnBtn
+                background-color: transparent
+                border: 1px solid white
+
+            .bookBtn
+                background-color: #1DE782
