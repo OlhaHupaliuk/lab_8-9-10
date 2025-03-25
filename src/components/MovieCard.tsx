@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useState} from 'react';
+import { useNavigate } from 'react-router-dom'
 import '../styles/MovieCard.sass'
 import { Movie } from '../types';
+
 interface MovieCardProps {
   movie: Movie;
 }
 
 const MovieCard: React.FC<MovieCardProps> = ({movie}) => { 
-  const { img, title, descr, genre, sessions } = movie;
+  const { id, img, title, descr, genre, sessions } = movie;
   const [mouseOver, setMouseOver] = useState(false);
+  const navigate = useNavigate();
   function handleHover(){
     setMouseOver(!mouseOver)
   }
@@ -26,7 +29,7 @@ const MovieCard: React.FC<MovieCardProps> = ({movie}) => {
 
             {sessions.map(time => {
               return(
-                <button>{time}</button>
+                <button onClick={() => navigate(`/booking/${id}/${time.id}`)}>{time.time}</button>
               )
             })}
         </div>

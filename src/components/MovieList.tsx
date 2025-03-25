@@ -1,19 +1,17 @@
 import React, { useState } from 'react'
+import {useBooking} from '../BookingContext'
 import MovieCard from './MovieCard'
 import '../styles/MovieList.sass'
-import { Movie } from '../types'
 
-interface MovieListProps {
-  movies: Movie[];
-}
-const MovieList: React.FC<MovieListProps> = ({movies}) => {
+const MovieList: React.FC = () => {
   const [movieName, setMovieName] = useState<string>('');
+  const { movieList } = useBooking();
 
   function handleChange(ev:React.ChangeEvent<HTMLInputElement>){
       setMovieName(ev.target.value) 
   }
 
-  const filteredMovies = movies.filter(movie =>
+  const filteredMovies = movieList.filter(movie =>
     movie.title.toLowerCase().includes(movieName.toLowerCase())
   );
 
