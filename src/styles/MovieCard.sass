@@ -1,6 +1,4 @@
 .movieCard
-    width: 230px
-    height: 375px
     border-radius: 20px
     position: relative
     color: #fff
@@ -8,6 +6,10 @@
     padding: 15px
     z-index: 1
     cursor: pointer
+    opacity: 0
+    animation: fadeIn 0.5s ease-in forwards
+    width: 230px
+    height: 375px
     &__image
         position: absolute
         border-radius: 18px
@@ -56,3 +58,15 @@
         &:focus,
         &:focus-visible
             outline: 4px auto -webkit-focus-ring-color
+@keyframes fadeIn
+    from
+        opacity: 0
+        transform: translateY(20px)
+    to
+        opacity: 1
+        transform: translateY(0)
+
+@media (max-width: 630px)
+    .movieCard
+        width: 330px
+        height: 475px

@@ -16,7 +16,7 @@ const CinemaHall: React.FC<CinemaHallProps> = ({ selectedSeats, bookedSeats, tog
           onClick={() => toggleSeat(seat)}
           style={{
             backgroundColor: bookedSeats.includes(seat)
-              ? "grey"
+              ? "red"
               : selectedSeats.includes(seat)
               ? "#1DE782"
               : "white",

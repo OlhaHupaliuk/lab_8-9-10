@@ -24,6 +24,7 @@
         margin-top: 36px
         margin-bottom: 100px
     .seatsContainer
+        min-width: 410px
         width: 31%
         margin: 0 auto
         @include flex-center()
@@ -36,6 +37,7 @@
             font-size: 12px
             font-family: Roboto
             @include flex-center()
+            align-items: center
             padding: 12px
             width: 40px
             border-radius: 6px
@@ -60,7 +62,6 @@
             h2
                 font-size: 18px
                 font-weight: normal
-
                 margin: 0
             p
                 line-height: 1em
@@ -79,9 +80,49 @@
                 padding: 10px 40px
                 min-width: 220px
                 cursor: pointer
+                transition: all .2s ease-in-out
+                &:active
+                    transform: translateY(3px)
             .returnBtn
                 background-color: transparent
                 border: 1px solid white
+                &:hover
+                    border: 1px solid #b10303a1
+                    color: #b10303a1
 
             .bookBtn
                 background-color: #1DE782
+                &:hover
+                    background-color: #055d30
+
+@media (max-width: 1000px)
+    .bookingPage
+        padding: 40px
+        .infoContainer
+            gap: 60px
+            &__btnWrap
+                gap: 15px
+            button
+                min-width: 170px
+                padding: 10px
+                font-size: 18px
+@media (max-width: 630px)
+    .bookingPage
+        .refreshBtn
+            margin: 15px 0
+        &__title
+            margin-bottom: 30px
+            font-size: 28px
+        .seatsContainer
+            gap: 6px
+            min-width: 330px
+            .seat
+                width: 35px
+                height: 35px
+        .infoContainer
+            &__btnWrap
+                display: flex
+                flex-direction: column-reverse
+            button
+
+                height: 50px

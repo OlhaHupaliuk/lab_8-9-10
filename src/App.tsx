@@ -8,7 +8,7 @@ function App() {
     <BookingProvider>
       <Router>
         <Routes>
-          <Route path='/home' element={<Home />} />
+          <Route path='/' element={<Home />} index/>
           <Route path='/booking/:movieId/:sessionId' element={<BookingPage />} />
         </Routes>
       </Router>

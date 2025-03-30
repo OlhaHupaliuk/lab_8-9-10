@@ -6,4 +6,6 @@
   width: 100%;
   background-image: url("./assets/bg.png.png");
   background-size: cover;
+  background-position: top;
+  font-family: Poppins;
 }

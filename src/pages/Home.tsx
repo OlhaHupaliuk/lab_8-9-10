@@ -1,6 +1,5 @@
-import React from 'react'
 import MovieList from '../components/MovieList'
-const Home = () => {
+const Home:React.FC = () => {
   return (
     <MovieList />
   )

@@ -1,30 +1,41 @@
 
-// Тип для сеансу
 export interface Session {
-  id: string; // Унікальний ідентифікатор сеансу (наприклад, "s1")
-  time: string; // Час сеансу (наприклад, "2025-04-10 19:00")
-  hall: string; // Назва залу (наприклад, "Hall 1")
-  availableSeats: number; // Кількість вільних місць
+  id: string;
+  time: string; 
+  hall: string;
+  availableSeats: number; 
 }
 
-// Тип для фільму
 export interface Movie {
   id: number;
   img: string;
   title: string;
   descr: string;
   genre: string;
-  sessions: Session[]; // Масив об’єктів сеансів, а не рядків
+  sessions: Session[]; 
 }
 
 // Тип для бронювань
 export interface Bookings {
-  [key: string]: number[]; // Ключ — "movieId-sessionId", значення — масив номерів місць
+  [key: string]: Booking[]; 
+}
+
+export interface Booking {
+  seats: number[];
+  user: UserData;
 }
 
 // Тип для значення контексту
 export interface BookingContextType {
   movieList: Movie[];
   bookings: Bookings;
-  bookSeats: (movieId: number, sessionId: string, selectedSeats: number[]) => void;
+  bookSeats: (movieId: number, sessionId: string, selectedSeats: number[], UserData: UserData) => void;
+  getBookedSeats: (movieId: number, sessionId: string) => number[];
 }
+
+export interface UserData {
+  name: string;
+  phone: number;
+  email: string
+}
+

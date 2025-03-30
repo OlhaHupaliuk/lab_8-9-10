@@ -1,0 +1,78 @@
+.userForm
+    position: absolute
+    max-width: 550px
+    width: 50%
+    padding: 30px
+    transform: translate(-50%, -50%)
+    top: 50%
+    left: 50%
+    border-radius: 10px
+    background-color: white
+    color: black
+    display: flex
+    flex-direction: column
+    align-items: center
+    font-family: Poppins
+    backdrop-filter: blur(3px)
+    &__closeBtn
+        position: absolute
+        top: 5%
+        right: 5%
+        color: #5A5A5D
+        background-color: transparent
+        border: none
+        font-size: 24px
+    h2
+        font-size: 30px
+        width: 95%
+        text-align: start
+        margin: 0
+    &__submitBtn
+        height: 48px
+        width: 95%
+        font-weight: bold
+        font-size: 16px
+        text-justify: center
+        background-color: #1DE782
+        border: 2px #1DE782 solid
+        border-radius: 8px
+    &__inputsWrap
+        padding: 0
+        width: 94%
+        list-style: none
+        display: flex
+        flex-direction: column
+        align-items: flex-start
+
+        li
+            width: 100%
+            label
+                text-align: start
+                display: block
+                color: #5A5A5D
+
+            input
+                box-sizing: border-box
+                width: 100%
+                padding: 0 10px
+                background-color: white
+                border-radius: 8px
+                height: 48px
+                border: 1px solid #5A5A5D
+                color: #5A5A5D
+                font-size: 14px
+
+@media (max-width: 630px)
+    .userForm
+        width: 60%
+        padding: 15px
+        .close
+        &__submitBtn
+            height: 36px
+        h2
+            font-size: 20px
+        li
+            label
+                font-size: 14px
+            input
+                height: 36px
