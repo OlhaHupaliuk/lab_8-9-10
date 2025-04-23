@@ -1,4 +1,3 @@
-
 export interface Session {
   id: string;
   time: string; 
@@ -15,7 +14,6 @@ export interface Movie {
   sessions: Session[]; 
 }
 
-// Тип для бронювань
 export interface Bookings {
   [key: string]: Booking[]; 
 }
@@ -25,7 +23,6 @@ export interface Booking {
   user: UserData;
 }
 
-// Тип для значення контексту
 export interface BookingContextType {
   movieList: Movie[];
   bookings: Bookings;

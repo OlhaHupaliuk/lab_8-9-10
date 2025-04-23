@@ -15,13 +15,16 @@ const MovieCard: React.FC<MovieCardProps> = ({movie}) => {
     setMouseOver(!mouseOver)
   }
   return (
-    <li onMouseEnter={handleHover} onMouseLeave={handleHover} className='movieCard'>
+    <li onMouseEnter={handleHover} onMouseLeave={handleHover} className='movieCard'> 
+    {/** для ноутбуку треба просто навести щоб побачити додаткову інформацію про фільм, а для сенсорних пристроїв 
+     * треба натиснути на картку */}
         <img 
           className='movieCard__image' 
           style={
             {opacity: mouseOver ? '30%' : '100%' , zIndex: mouseOver ?  -1 : '' , filter: mouseOver ? 'blur(3px)' : ''}
           }   
-          src={img} />
+          src={img} 
+          alt=''/>
         <p className='movieCard__descr'>{descr}</p>
         <p className='movieCard__genre'>{genre}</p>             
         <p>Available sessions:</p>
