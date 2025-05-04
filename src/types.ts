@@ -28,11 +28,17 @@ export interface BookingContextType {
   bookings: Bookings;
   bookSeats: (movieId: number, sessionId: string, selectedSeats: number[], UserData: UserData) => void;
   getBookedSeats: (movieId: number, sessionId: string) => number[];
+  getUserBookings: (email: string) => { sessionId: string, movieTitle: string, data: any }[];
 }
 
 export interface UserData {
   name: string;
-  phone: number;
+  phone: string;
   email: string
 }
 
+export interface AuthContextType {
+  user: UserData | null;
+  login: (userData: UserData) => void;
+  logout: () => void;
+}

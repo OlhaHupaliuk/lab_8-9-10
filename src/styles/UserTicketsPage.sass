@@ -1,0 +1,30 @@
+.userTicketsCont
+    width: 100%
+    padding: 30px 100px
+    min-height: 85vh
+    &__title
+        font-size: 32px
+        color: #fff
+    &__cardList
+        padding: 40px
+        width: 90%
+        margin: 0 auto
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        gap: 10px
+        .ticketCard
+            color: #fff
+            border-radius: 30px 15px
+            background-color: var(--grey-color)
+            padding: 30px
+            text-align: start
+            .title
+                color: var(--accent-color)
+            .ticketBtn
+                border-radius: 20px
+                border: 1px solid var(--accent-color)
+                color: var(--accent-color)
+                &:hover
+                    border: 1px solid transparent
+                    background-color: var(--accent-color)
+                    color: var(--grey-color)

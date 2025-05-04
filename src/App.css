@@ -7,5 +7,8 @@
   background-color: black;
   background-size: cover;
   background-position: top;
-  font-family: Poppins;
+  font-family: "Poppins", sans-serif;
+  --accent-color: #a100ff;
+  --grey-color: #3e3e3e;
+  --light-grey-color: #5a5a5d;
 }

@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from "react-router-dom"
-import { useBooking } from "../BookingContext";
+import { useBooking } from "../hooks/BookingContext";
 import { useState } from "react";
 import { UserData } from "../types"
 import '../styles/BookingPage.sass'

@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react'
-import { useBooking } from '../BookingContext'
+import { useBooking } from '../hooks/BookingContext'
 import MovieCard from './MovieCard'
 import '../styles/MovieList.sass'
 // import axios from 'axios'
